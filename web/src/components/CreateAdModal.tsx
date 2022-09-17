@@ -22,7 +22,7 @@ export const CreateAdModal = () => {
     const [useVoiceChannel, setUseVoiceChannel] = useState(false)
 
     useEffect(() => {
-        axios('http://localhost:3001/games/')
+        axios('https://nlw-esports-production-9bab.up.railway.app/games')
             .then(response => {
                 setGames(response.data)
             })
@@ -38,7 +38,7 @@ export const CreateAdModal = () => {
             return;
         }
 
-        try {axios.post(`http://localhost:3001/games/${data.game}/ads`, {
+        try {axios.post(`https://nlw-esports-production-9bab.up.railway.app/games/${data.game}/ads`, {
             name: data.name,
             yearsPlaying: Number(data.yearsPlaying),
             discord: data.discord,
