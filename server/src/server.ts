@@ -102,4 +102,6 @@ app.post('/games/:id/ads', async (req, res) => {
     return res.status(201).json(ad)
 })
 
-app.listen('0.0.0.0:$PORT')
+const PORT = 5000
+
+app.listen(process.env.PORT || PORT, () => console.log('Listening on' + PORT))
