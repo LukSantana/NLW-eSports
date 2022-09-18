@@ -11,7 +11,7 @@
 
 # Tecnologias Usadas
 
--Typescript
+- Typescript
 
 - Back-End e Banco de Dados
   - Express
