@@ -34,15 +34,7 @@ export const CreateAdModal = () => {
         const formData = new FormData(event.target as HTMLFormElement);
         const data = Object.fromEntries(formData)
 
-        if (!data.id || !data.name || !data.weekDays || !data.hoursStart || !data.discord) {
-            console.log(!data.id)
-            console.log(!data.name)
-            console.log(!data.weekDays)
-            console.log(!data.hoursStart)
-            console.log(!data.hourEnd)
-            console.log(!data.discord)
-
-
+        if (!data.name) {
             alert("Por favor, preencha todos os campos.")
             return;
         }
