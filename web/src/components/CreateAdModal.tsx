@@ -34,27 +34,28 @@ export const CreateAdModal = () => {
         const formData = new FormData(event.target as HTMLFormElement);
         const data = Object.fromEntries(formData)
 
-        const validationParams = !data.name || !data.weekDays || !data.hoursStart || !data.discord 
+        const validationParams = !data.id || !data.name || !data.weekDays || !data.hoursStart || !data.discord
 
-        if(validationParams){
+        if (validationParams) {
             alert("Por favor, preencha todos os campos.")
             return;
         }
 
-        try {axios.post(`https://nlw-esports-production-9bab.up.railway.app/games/${data.game}/ads`, {
-            name: data.name,
-            yearsPlaying: Number(data.yearsPlaying),
-            discord: data.discord,
-            weekDays: weekDays.map(Number),
-            hoursStart: data.hoursStart,
-            hourEnd: data.hourEnd,
-            useVoiceChannel: useVoiceChannel
-        })
-        alert('Anúncio criado com sucesso!')
-    } catch(err){
-        console.log(err)
-        alert('Erro ao criar o anúncio!')
-    }
+        try {
+            axios.post(`https://nlw-esports-production-9bab.up.railway.app/games/${data.game}/ads`, {
+                name: data.name,
+                yearsPlaying: Number(data.yearsPlaying),
+                discord: data.discord,
+                weekDays: weekDays.map(Number),
+                hoursStart: data.hoursStart,
+                hourEnd: data.hourEnd,
+                useVoiceChannel: useVoiceChannel
+            })
+            alert('Anúncio criado com sucesso!')
+        } catch (err) {
+            console.log(err)
+            alert('Erro ao criar o anúncio!')
+        }
     }
 
     return (
