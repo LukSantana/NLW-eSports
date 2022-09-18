@@ -13,7 +13,19 @@ import { convertMinutesToHourString } from './utils/convert-minutes-to-hour-stri
 const app = express();
 
 app.use(express.json())
-app.use(cors())
+const allowlist = ['https://nlw-esports-luk.netlify.app']
+
+const corsOptionsDelegate = function (req: any, callback: any) {
+    let corsOptions;
+    if (allowlist.indexOf(req.header('Origin')) !== -1) {
+        corsOptions = { origin: true }
+    } else {
+        corsOptions = { origin: false }
+    }
+    callback(null, corsOptions)
+}
+
+app.use(cors(corsOptionsDelegate))
 
 const prisma = new PrismaClient();
 
@@ -27,11 +39,11 @@ app.get('/games', async (req, res) => {
             }
         }
     })
-    
+
     return res.status(200).json(games)
 })
 
-app.get('/games/:id/ads', async (req, res) => {
+app.get('/games/:id/ads', cors(), async (req, res) => {
     const gameId = req.params.id
 
     const ads = await prisma.ad.findMany({
