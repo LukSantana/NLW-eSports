@@ -95,6 +95,7 @@ export const CreateAdModal = () => {
                                 name="yearsPlaying"
                                 id="yearsPlaying"
                                 type="number"
+                                min="0"
                                 placeholder="Tudo bem ser ZERO"
                             />
                         </div>

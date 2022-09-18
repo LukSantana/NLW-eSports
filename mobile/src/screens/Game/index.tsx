@@ -30,13 +30,13 @@ export function Game() {
     }
 
     async function getDiscordUser(adsId: string) {
-            fetch(`http://192.168.1.11:3001/ads/${adsId}/discord`)
+            fetch(`https://nlw-esports-production-9bab.up.railway.app/ads/${adsId}/discord`)
                 .then(res => res.json())
                 .then(data => setDiscordDuoSelected(data.discord))
     }
 
     useEffect(() => {
-        fetch(`http://192.168.1.11:3001/games/${game.id}/ads`)
+        fetch(`https://nlw-esports-production-9bab.up.railway.app/games/${game.id}/ads`)
             .then(res => res.json())
             .then(data => setDuos(data))
     }, [])

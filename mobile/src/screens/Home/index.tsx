@@ -21,7 +21,7 @@ export function Home() {
     }
 
     useEffect(() => {
-        fetch('http://192.168.1.11:3001/games')
+        fetch('https://nlw-esports-production-9bab.up.railway.app/games')
             .then(res => res.json())
             .then(data => setGames(data))
     }, [])
