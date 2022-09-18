@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 import logo from '../assets/Logo.svg'
 import AdCard from '../components/AdCard';
+import Alert from '../components/Alert';
 
 interface AdData {
     hourEnd: string,
@@ -41,11 +42,14 @@ export const GameAds = () => {
             <Link to='/'>
                 <img src={logo} alt="" />
             </Link>
-            <h1 className='text-4xl text-white font-bold mt-20 mb-8'>Veja os últimos anúncios</h1>
-            <div ref={sliderRef} className='flex flex-wrap'>
-                {ads.map(ad =>
-                    <AdCard key={ad.id} data={ad} />
-                )}
+            <h1 className='text-4xl text-white font-bold mt-20 mb-8 text-center'>Veja os últimos anúncios</h1>
+            <div ref={sliderRef} className='flex flex-wrap gap-5 lg:flex-row'>
+                {ads.length > 1 ?
+                    ads.map(ad =>
+                        <AdCard key={ad.id} data={ad} />
+                    )
+                    : <Alert/>}
+
             </div>
         </div>
     )

@@ -17,7 +17,7 @@ interface Props {
 
 const AdCard = ({ data }: Props) => {
     return (
-        <div className='w-60 bg-[#2A2634] rounded p-5 mr-4'>
+        <div className='w-60 bg-[#2A2634] rounded-lg p-5 mr-4'>
             <AdInfo
                 label="Nome"
                 value={data.name}

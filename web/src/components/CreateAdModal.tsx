@@ -58,7 +58,7 @@ export const CreateAdModal = () => {
         <Dialog.Portal>
             <Dialog.Overlay className='bg-black/60 inset-0 fixed' />
 
-            <Dialog.Content className='fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow shadow-black/25'>
+            <Dialog.Content className='fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg lg:w-[480px] shadow shadow-black/25'>
                 <Dialog.Title className='text-3xl  font-black'>Publique um anúncio</Dialog.Title>
 
                 <form onSubmit={handleCreateAd} className='mt-8 flex flex-col gap-4'>
@@ -119,14 +119,14 @@ export const CreateAdModal = () => {
                                 <ToggleGroup.Item
                                     value="0"
                                     title="Domingo"
-                                    className={`w-9 h-9 rounded bg-zinc-900 ${weekDays.includes('0') ? 'bg-violet-500' : ''}`}
+                                    className={`w-9 h-9 rounded ${weekDays.includes('0') ? 'bg-violet-500' : 'bg-zinc-900 '}`}
                                 >
                                     D
                                 </ToggleGroup.Item>
                                 <ToggleGroup.Item
                                     value="1"
                                     title="Segunda"
-                                    className={`w-9 h-9 rounded bg-zinc-900 ${weekDays.includes('1') ? 'bg-violet-500' : ''}`}
+                                    className={`w-9 h-9 rounded ${weekDays.includes('1') ? 'bg-violet-500' : 'bg-zinc-900 '}`}
 
                                 >
                                     S
@@ -134,7 +134,7 @@ export const CreateAdModal = () => {
                                 <ToggleGroup.Item
                                     value="2"
                                     title="Terça"
-                                    className={`w-9 h-9 rounded bg-zinc-900 ${weekDays.includes('2') ? 'bg-violet-500' : ''}`}
+                                    className={`w-9 h-9 rounded ${weekDays.includes('2') ? 'bg-violet-500' : 'bg-zinc-900 '}`}
 
                                 >
                                     T
@@ -142,7 +142,7 @@ export const CreateAdModal = () => {
                                 <ToggleGroup.Item
                                     value="3"
                                     title="Quarta"
-                                    className={`w-9 h-9 rounded bg-zinc-900 ${weekDays.includes('3') ? 'bg-violet-500' : ''}`}
+                                    className={`w-9 h-9 rounded ${weekDays.includes('3') ? 'bg-violet-500' : 'bg-zinc-900 '}`}
 
                                 >
                                     Q
@@ -150,7 +150,7 @@ export const CreateAdModal = () => {
                                 <ToggleGroup.Item
                                     value="4"
                                     title="Quinta"
-                                    className={`w-9 h-9 rounded bg-zinc-900 ${weekDays.includes('4') ? 'bg-violet-500' : ''}`}
+                                    className={`w-9 h-9 rounded ${weekDays.includes('4') ? 'bg-violet-500' : 'bg-zinc-900 '}`}
 
                                 >
                                     Q
@@ -158,7 +158,7 @@ export const CreateAdModal = () => {
                                 <ToggleGroup.Item
                                     value="5"
                                     title="Sexta"
-                                    className={`w-9 h-9 rounded bg-zinc-900 ${weekDays.includes('5') ? 'bg-violet-500' : ''}`}
+                                    className={`w-9 h-9 rounded ${weekDays.includes('5') ? 'bg-violet-500' : 'bg-zinc-900 '}`}
 
                                 >
                                     S
@@ -166,7 +166,7 @@ export const CreateAdModal = () => {
                                 <ToggleGroup.Item
                                     value="6"
                                     title="Sábado"
-                                    className={`w-9 h-9 rounded bg-zinc-900 ${weekDays.includes('6') ? 'bg-violet-500' : ''}`}
+                                    className={`w-9 h-9 rounded ${weekDays.includes('6') ? 'bg-violet-500' : 'bg-zinc-900 '}`}
 
                                 >
                                     S
