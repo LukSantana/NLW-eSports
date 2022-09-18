@@ -34,7 +34,10 @@ export const CreateAdModal = () => {
         const formData = new FormData(event.target as HTMLFormElement);
         const data = Object.fromEntries(formData)
 
-        if(!data.name){
+        const validationParams = !data.name || !data.weekDays || !data.hoursStart || !data.discord 
+
+        if(validationParams){
+            alert("Por favor, preencha todos os campos.")
             return;
         }
 
