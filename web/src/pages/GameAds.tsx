@@ -44,7 +44,7 @@ export const GameAds = () => {
             </Link>
             <h1 className='text-4xl text-white font-bold mt-20 mb-8 text-center'>Veja os últimos anúncios</h1>
             <div ref={sliderRef} className='flex flex-wrap gap-5 lg:flex-row'>
-                {ads.length > 1 ?
+                {ads.length > 0 ?
                     ads.map(ad =>
                         <AdCard key={ad.id} data={ad} />
                     )
