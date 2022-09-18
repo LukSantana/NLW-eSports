@@ -36,7 +36,7 @@ app.get('/games', async (req, res) => {
     return res.status(200).json(games)
 })
 
-app.get('/games/:id/ads', cors(), async (req, res) => {
+app.get('/games/:id/ads', async (req, res) => {
     const gameId = req.params.id
 
     const ads = await prisma.ad.findMany({
