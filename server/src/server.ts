@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express from 'express'
+import cors from 'cors'
 
 import { PrismaClient } from '@prisma/client'
 
@@ -12,22 +13,9 @@ import { convertMinutesToHourString } from './utils/convert-minutes-to-hour-stri
 const app = express();
 
 app.use(express.json())
+app.use(cors())
 
 const prisma = new PrismaClient();
-
-app.get('/games', async (req, res) => {
-    const games = await prisma.game.findMany({
-        include: {
-            _count: {
-                select: {
-                    ads: true,
-                }
-            }
-        }
-    })
-
-    return res.status(200).json(games)
-})
 
 app.get('/games/:id/ads', async (req, res) => {
     const gameId = req.params.id
