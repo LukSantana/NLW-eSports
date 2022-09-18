@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express from 'express'
-import cors from 'cors'
 
 import { PrismaClient } from '@prisma/client'
 
@@ -13,12 +12,6 @@ import { convertMinutesToHourString } from './utils/convert-minutes-to-hour-stri
 const app = express();
 
 app.use(express.json())
-let corsOptions = {
-    origin: 'https://nlw-esports-luk.netlify.app',
-    optionsSuccessStatus: 200,
-}
-
-app.use(cors(corsOptions))
 
 const prisma = new PrismaClient();
 
