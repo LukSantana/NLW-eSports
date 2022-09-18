@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.json())
 let corsOptions = {
-    origin: 'https://nlw-esports-luk.netlify.app' || 'localhost',
+    origin: 'https://nlw-esports-luk.netlify.app',
     optionsSuccessStatus: 200,
 }
 
