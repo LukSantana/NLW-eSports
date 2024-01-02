@@ -13,8 +13,9 @@ import { convertMinutesToHourString } from "./utils/convert-minutes-to-hour-stri
 const app = express();
 
 app.use(express.json());
+
 let corsOptions = {
-	origin: ["*", "https://nlw-esports-luk.netlify.app"],
+	origin: "*",
 	optionsSuccessStatus: 200,
 };
 
