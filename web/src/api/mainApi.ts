@@ -1,1 +1,1 @@
-export const baseApiUrl = "https://nlw-setup-luk.onrender.com";
+export const baseApiUrl = "https://nlw-esports-luk.onrender.com";
