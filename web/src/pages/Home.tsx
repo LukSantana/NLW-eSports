@@ -23,7 +23,7 @@ export const Home = () => {
 	}
 
 	useEffect(() => {
-		axios(`${baseApiUrl}/games`).then((response) => {
+		axios(`${baseApiUrl}/games`).then((response: any) => {
 			setGames(response.data);
 		});
 	}, []);
