@@ -1,0 +1,1 @@
+export const baseApiUrl = "https://nlw-setup-luk.onrender.com";
